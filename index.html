@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SurePerc Ent.</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="icon" href="iyailu.jfif" type="image/jfif">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <h1>Sure Percussions Entertainment</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#connect">Connect</a>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="intro">
+            <div class="text">
+                <h2>Opeyemi Taiwo Quadri</h2>
+                <p>
+                    Opeyemi Taiwo, the C.E.O of <strong>Sure Percussions Entertainment</strong> is a versatile talking drummer specializing in playing and teaching various Yoruba drums such as 
+                    Gángan (Talking Drum), Òmèlè, Gúdúgúdú, Ìyá Ìlù, Bàtá and many more. He excels in Fuji, Juju, Gospel, studio works, and more.
+                    Opeyemi also builds, sells and repairs local drums and trains individuals in the art of drumming and drum-making.
+                </p>
+            </div>
+            <div class="image">
+                <img src="opeyemi.jpeg" alt="Opeyemi Taiwo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <div class="item">
+                <img src="drum1.jpeg" alt="Drum 1">
+            </div>
+            <div class="item">
+                <img src="drum2.jpeg" alt="Drum 2">
+            </div>
+            <div class="item">
+                <img src="drum3.jpeg" alt="Drum 3">
+            </div>
+            <div class="item">
+                <img src="iyailu.jfif" alt="iyalu">
+            </div>
+            <div class="item">
+                <img src="drum4.jpeg" alt="Drum 4">
+            </div>
+            <div class="item">
+                <img src="bata.jpeg" alt="bata">
+            </div>
+            <div class="item">
+                <img src="opon.jpeg" alt="opon">
+            </div>
+            <div class="item">
+                <img src="drum5.jfif" alt="Drum 5">
+            </div>
+            <!-- Add more items as needed -->
+        </div>
+        
+
+        <div class="video-gallery-section">
+            <h3>Watch Opeyemi in Action</h3>
+            <div class="video-gallery">
+                <!-- Video 1 -->
+                <div class="video-item">
+                    <video controls>
+                        <source src="video1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+        
+                <!-- Video 2 -->
+                <div class="video-item">
+                    <video controls>
+                        <source src="video2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+        
+                <!-- Video 3 -->
+                <div class="video-item">
+                    <video controls>
+                        <source src="video3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+        
+                <div class="video-item">
+                    <img src="ope1.jpeg" alt="Image 1">
+                </div>
+                <div class="video-item">
+                    <img src="ope2.jpeg" alt="Image 2">
+                </div>
+            </div>
+            </div>
+        </section>
+    <!-- JavaScript for Sideways Scrolling -->
+   <script>
+        const gallery = document.querySelector('.gallery');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        gallery.addEventListener('mousedown', (e) => {
+            isDown = true;
+            gallery.classList.add('active');
+            startX = e.pageX - gallery.offsetLeft;
+            scrollLeft = gallery.scrollLeft;
+        });
+
+        gallery.addEventListener('mouseleave', () => {
+            isDown = false;
+            gallery.classList.remove('active');
+        });
+
+        gallery.addEventListener('mouseup', () => {
+            isDown = false;
+            gallery.classList.remove('active');
+        });
+
+        gallery.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - gallery.offsetLeft;
+            const walk = (x - startX) * 3; // Scroll speed
+            gallery.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+
+     <!-- Connect Section -->
+    <section id="connect">
+        <h2>Connect With Me</h2>
+        <p>Follow me on social media:</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/18CxXn4TRd/?mibextid=LQQJ4d" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://wa.me/2347088464993" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://instagram.com/opeyemi" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://tiktok.com/opeyemi" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 SurePerc Ent. | All rights reserved</p>
+    </footer>
+
+</body>
+</html>
